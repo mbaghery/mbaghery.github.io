@@ -21,5 +21,5 @@ import abtest as ab
 output_notebook()
 {% endhighlight %}
 
-Let's test $$\frac{2}{1}$$.
+Let's test $$\frac{1}{2x}$$.
 
