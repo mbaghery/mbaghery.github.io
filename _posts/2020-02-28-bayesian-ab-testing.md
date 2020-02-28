@@ -72,7 +72,7 @@ If $p_c$ and $p_t$ represent the click-through rates of the control and treatmen
     &= \int_0^1 dp_c \int_{p_c}^1 dp_t\, P(p_c| H_c, T_c) \, P(p_t| H_t, T_t) \, \mathrm{,}
 \end{split}
 \end{equation}
-where  $P(p_c| H_c, T_c)$ and $P(p_t| H_t, T_t)$ are the posteriors of the two designs. The integral above can be evaluated analytically but the derivation is very tedious and we will only quote the final expression here (the reader is referred to ref.~\cite{miller2015} for the derivation):
+where  $P(p_c| H_c, T_c)$ and $P(p_t| H_t, T_t)$ are the posteriors of the two designs. The integral above can be evaluated analytically but the derivation is very tedious and we will only quote the final expression here (see references at the bottom of the post):
 \begin{equation}
    h(H_c,T_c,H_t,T_t) = \frac{1}{\mathrm{B}(H_c+1, T_c+1)} \sum_{i=1}^{H_t+1} \frac{\mathrm{B}(H_c+i, T_c+T_t+2)}{(T_t+i)\mathrm{B}(i,T_t+1)} \, \mathrm{,}
 \end{equation}
@@ -297,7 +297,7 @@ The probability that the treatment group has a longer tail (or equivalently a hi
     &= \sum_{k=0}^{\alpha_c-1} \frac{(\beta_t + \beta_c)^{-(k+\alpha_t)} \beta_c^k \beta_t^{\alpha_t}}{(k+\alpha_t) \mathrm{B}(k+1,\alpha_t)} \, \mathrm{,}
 \end{split}
 \end{equation}
-where $\mathrm{B}(x,y)$ is the beta <em>function</em>. A detailed derivation can be found in Ref.~\cite{miller2015}.
+where $\mathrm{B}(x,y)$ is the beta <em>function</em>.
 
 
 <h4>Conditional value at risk (expected shortfall)</h4>
@@ -496,7 +496,7 @@ In sum, if we are only interested in the behavior of the posterior in the presen
 
 <h3>Termination criteria for normal distributions</h3>
 <h4>Probability of winning</h4>
-If we assume the posterior is a normal distribution, the probability of winning for the test group is given by \cite{wiki:gaussian_integrals}
+If we assume the posterior is a normal distribution, the probability of winning for the test group is given by
 \begin{equation}
 \begin{split}
     P(p_t > p_c) &= \int_{-\infty}^{+\infty} dp_t \int_{-\infty}^{p_t} dp_c \, N(p_t; \mu_t, \sigma_t) \, N(p_c; \mu_c, \sigma_c) \\\\ 
@@ -514,3 +514,8 @@ Similarly, the expected shortfall is given by
     &= (\mu_c - \mu_t) \, \Phi\left(\mu_c; \mu_t, \sqrt{\sigma_t^2 + \sigma_c^2}\right) + (\sigma_t^2 + \sigma_c^2) \, N\left(\mu_c; \mu_t, \sqrt{\sigma_t^2 + \sigma_c^2} \right) \, \mathrm{.}
 \end{split}
 \end{equation}
+
+<h2>References</h2>
+Evan Miller, [Formulas for Bayesian A/B Testing](https://www.evanmiller.org/bayesian-ab-testing.html) <br />
+
+Wikipedia, [List of integrals of Gaussian functions](https://en.wikipedia.org/wiki/List_of_integrals_of_Gaussian_functions)
