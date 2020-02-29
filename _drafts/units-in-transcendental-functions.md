@@ -24,22 +24,7 @@ Exactly. What's worse, what are we gonna do with $\exp(1m)+\sin(x)$ should it ar
 Furthermore, we've never measured anything like $\sin(1m)$ before, although it is not mathematically wrong.
 
 Is there any way we can avoid this whole mess?
-That's where the Buckingham theorem comes into play. It turns out we can rewrite any physical differential equation such that it is completelyfree of any units.
+That's where the Buckingham theorem comes into play. It turns out we can rewrite any physical differential equation such that it is completely free of any units.
 
-<h2>Comments</h2>
-{% if page.comments %}
-<div id="disqus_thread"></div>
-<script>
-var disqus_config = function () {
-    this.page.url = '{{ page.url | absolute_url }}';
-    this.page.identifier = '{{ page.url | absolute_url }}';
-};
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://goodstuffgithub.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-{% endif %}
+
+{%- include disqus_comments.html -%}
