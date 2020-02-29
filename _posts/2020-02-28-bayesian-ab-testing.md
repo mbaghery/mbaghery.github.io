@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Bayesian A/B Testing"
-date: 2020-02-28
 tags:
     - Bayesian statistics
 author: "Mehrdad Baghery, Ramin Ghelichi"
+comments: true
 ---
 {%- include mathjax.html -%}
 
@@ -519,3 +519,6 @@ Similarly, the expected shortfall is given by
 Evan Miller, [Formulas for Bayesian A/B Testing](https://www.evanmiller.org/bayesian-ab-testing.html) <br />
 
 Wikipedia, [List of integrals of Gaussian functions](https://en.wikipedia.org/wiki/List_of_integrals_of_Gaussian_functions)
+
+
+{%- include disqus_comments.html -%}
