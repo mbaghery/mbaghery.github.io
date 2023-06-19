@@ -28,7 +28,7 @@ p_i^{(f)} = \sum_i{\frac{1}{w_m p_i^{(m)}}} .
 <h2>Whatever is gradient boosting?</h2>
 You have most likely heard of an optimisation algorithm called _gradient descent_. In a nutshell, it tries to find the minimum of a function $f(x)$ by taking repeated but small steps in the opposite direction to its gradient $\vec{g}=\nabla f$. That is,
 \begin{equation}
-\vec{x}_{min} = \vec{x}_0 + \alpha_1 \vec{g}_1 + \alpha_2 \vec{g}_2 + \ldots
+\vec{x}_{min} = \vec{x}_0 + \alpha_1 \vec{g}_1 + \alpha_2 \vec{g}_2 + ...
 \end{equation}
 where $\vec{x}_0$ is the initial guess as to where the minimum might be. Note that this starting position is quite arbitrary, and that all the other terms are successive gradients evaluated at the previous point, i.e. $\vec{g}_i = \nabla f \vert_{x_i-1}$.
 
