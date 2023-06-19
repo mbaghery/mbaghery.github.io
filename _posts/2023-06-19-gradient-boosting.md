@@ -14,7 +14,7 @@ Boosting is similar to bagging (aka bootstrapping) in that the final model is a 
 
 In boosting, models are trained sequentially, and each model is trained on the errors of the previous model. If $D_1 = \{x_i, y_i\}$ is the training dataset used to train the first model and $p_i^{(1)}$ are the corresponding predictions, then the training set for the second model is
 \begin{equation}
-D_2 = \{x_i, w_2 (y_i - p_i^{(1)})\} ,
+D_2 = \left{x_i, w_2 (y_i - p_i^{(1)})\right} ,
 \end{equation}
 where $w_2$ is a prefactor. The predictions of the combined model are now given by
 \begin{equation}
