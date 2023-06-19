@@ -12,15 +12,15 @@ comments: true
 
 Boosting is similar to bagging (aka bootstrapping) in that the final model is a weighted sum of several constituent submodels. While in bagging the same model is trained on random (with replacement) samples of data and the average of the predictions of those models is used as the final prediction, boosting is a different story.
 
-In boosting, models are trained sequentially, and each model is trained on the errors of the previous model. If $\mathcal{D}_1 = \{x_i, y_i\}$ is the training dataset used to train the first model and $p_i^{(1)}$ are the corresponding predictions, then the training set for the second model is
+In boosting, models are trained sequentially, and each model is trained on the errors of the previous model. If $D_1 = \{x_i, y_i\}$ is the training dataset used to train the first model and $p_i^{(1)}$ are the corresponding predictions, then the training set for the second model is
 \begin{equation}
-\mathcal{D}_2 = \{x_i, w_2 (y_i - p_i^{(1)})\} ,
+D_2 = \{x_i, w_2 (y_i - p_i^{(1)})\} ,
 \end{equation}
 where $w_2$ is a prefactor. The predictions of the combined model are now given by
 \begin{equation}
 p_i^{(1+2)} = p_i^{(1)} + \frac{p_i^{(2)}}{w_2} .
 \end{equation}
-Similarly, a third model could be trained on $\mathcal{D}_3 = \{x_i, w_3 (y_i - p_i^{(1+2)})\}$, with overall predictions given by
+Similarly, a third model could be trained on $D_3 = \{x_i, w_3 (y_i - p_i^{(1+2)})\}$, with overall predictions given by
 \begin{equation}
 p_i^{(f)} = \sum_i{\frac{1}{w_m p_i^{(m)}}} .
 \end{equation}
@@ -63,3 +63,7 @@ $\int \frac{\delta J}{\delta f}(x) \mu(x) \, dx$. On the other hand, directional
 \int \frac{\delta J}{\delta f}(x) \mu(x) \, dx = \lim_{\epsilon \rightarrow 0}\frac{d}{d\epsilon} J[f(x)+\epsilon \mu(x)] .
 \end{equation}
 Therefore, all we have to do to evaluate the functional gradient is calculate the right hand side, and compare it to the left hand side to find $\frac{\delta J}{\delta f}$.
+
+
+
+{%- include disqus_comments.html -%}
