@@ -30,7 +30,7 @@ You have most likely heard of an optimisation algorithm called _gradient descent
 \begin{equation}
 \vec{x}_{min} = \vec{x}_0 + \alpha_1 \vec{g}_1 + \alpha_2 \vec{g}_2 + \ldots
 \end{equation}
-where $\vec{x}_0$ is the initial guess as to where the minimum might be. Note that this starting position is quite arbitrary, and that all the other terms are successive gradients evaluated at the previous point, i.e. $\vec{g}_i = \nabla f |_{x_i-1}$.
+where $\vec{x}_0$ is the initial guess as to where the minimum might be. Note that this starting position is quite arbitrary, and that all the other terms are successive gradients evaluated at the previous point, i.e. $\vec{g}_i = \nabla f \vert_{x_i-1}$.
 
 Now although many machine learning (ML) algorithms are formulated in terms of a cost function that is usually a sum over individual prediction errors, for example,
 \begin{equation}
@@ -44,11 +44,11 @@ where $y(x)$ is the true function we're trying to find, and $f(x)$ is our estima
 
 The goal of any ML algorithm is to find a function that minimises this cost functional. That is, we're trying to find an $f(x)$ that minimises $J[f]$. Different ML algorithms use different forms to express $f(x)$.
 
-Now we can devise a similar procedure to gradient descent for functionals. Using variational calculus, we can calculate the gradient of the functional (watch this excellent [playlist](​​https://www.youtube.com/playlist?list=PLdgVBOaXkb9CD8igcUr9Fmn5WXLpE8ZE_) by Faculty of Khan for an introduction to variational calculus):
+Now we can devise a similar procedure to gradient descent for functionals. Using variational calculus, we can calculate the gradient of the functional (watch this excellent [playlist]({​​https://www.youtube.com/playlist?list=PLdgVBOaXkb9CD8igcUr9Fmn5WXLpE8ZE_}) by Faculty of Khan for an introduction to variational calculus):
 \begin{equation}
 \frac{\delta J}{\delta f} = y(x) - f(x).
 \end{equation}
-Next, suppose we start with a first approximation $f^{(0)}(x)\equiv 0$ to the true function $y(x)$. We calculate the gradient at that function, i.e. $\frac{\delta J}{\delta f} \|_{f^{(0)}(x)} = y(x) - f^{(0)}(x)=y(x)$. Now we fit $f^{(1)}(x)$ to the gradient using our algorithm of choice. Again we can calculate the gradient at this new function, $\frac{\delta J}{\delta f} |_{f^{(0)}(x)+f^{(1)}(x)} = y(x) - (f^{(0)}(x) + f^{(1)}(x))$. We then fit another function $f^{(2)}(x)$ to this dataset. Alright, I hope you can see where this is going.
+Next, suppose we start with a first approximation $f^{(0)}(x)\equiv 0$ to the true function $y(x)$. We calculate the gradient at that function, i.e. $\frac{\delta J}{\delta f} \vert_{f^{(0)}(x)} = y(x) - f^{(0)}(x)=y(x)$. Now we fit $f^{(1)}(x)$ to the gradient using our algorithm of choice. Again we can calculate the gradient at this new function, $\frac{\delta J}{\delta f} \vert_{f^{(0)}(x)+f^{(1)}(x)} = y(x) - (f^{(0)}(x) + f^{(1)}(x))$. We then fit another function $f^{(2)}(x)$ to this dataset. Alright, I hope you can see where this is going.
 
 
 
@@ -58,7 +58,7 @@ The main idea is that we would like to find the gradient of a functional at a ce
 Before proceeding with the solution, remember how we calculated the directional gradient of a function back in first semester calculus,
 $\nabla_{\vec{v}}f(x) \equiv \vec{v} \cdot \nabla f(x)$
 where $\nabla f(x)$ is the gradient, and $\vec{v}$ is the vector representing the direction in which we want to evaluate the directional gradient. Now remember the dot product between two functions is defined as $\int f(x) g(x)\, dx$. So you would naturally expect the directional gradient of the functional in the direction of $\mu(x)$ to be
-$\int \frac{\delta J}{\delta f}(x) \mu(x) \, dx$. On the other hand, directional gradient is defined in calculus as $\lim_{\epsilon \rightarrow 0} \frac{J[f+\epsilon \mu]-J[f]}{\epsilon}=\frac{d}{d\epsilon} J[f+\epsilon \mu]|_{\epsilon=0}$. Equating the two, we have
+$\int \frac{\delta J}{\delta f}(x) \mu(x) \, dx$. On the other hand, directional gradient is defined in calculus as $\lim_{\epsilon \rightarrow 0} \frac{J[f+\epsilon \mu]-J[f]}{\epsilon}=\frac{d}{d\epsilon} J[f+\epsilon \mu]\vert_{\epsilon=0}$. Equating the two, we have
 \begin{equation}
 \int \frac{\delta J}{\delta f}(x) \mu(x) \, dx = \lim_{\epsilon \rightarrow 0}\frac{d}{d\epsilon} J[f(x)+\epsilon \mu(x)] .
 \end{equation}
