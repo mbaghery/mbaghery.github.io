@@ -48,7 +48,7 @@ Now we can devise a similar procedure to gradient descent for functionals. Using
 \begin{equation}
 \frac{\delta J}{\delta f} = y(x) - f(x).
 \end{equation}
-Next, suppose we start with a first approximation $f^{(0)}(x)\equiv 0$ to the true function $y(x)$. We calculate the gradient at that function, i.e. $\frac{\delta J}{\delta f} |_{f^{(0)}(x)} = y(x) - f^{(0)}(x)=y(x)$. Now we fit $f^{(1)}(x)$ to the gradient using our algorithm of choice. Again we can calculate the gradient at this new function, $\frac{\delta J}{\delta f} |_{f^{(0)}(x)+f^{(1)}(x)} = y(x) - (f^{(0)}(x) + f^{(1)}(x))$. We then fit another function $f^{(2)}(x)$ to this dataset. Alright, I hope you can see where this is going.
+Next, suppose we start with a first approximation $f^{(0)}(x)\equiv 0$ to the true function $y(x)$. We calculate the gradient at that function, i.e. $\frac{\delta J}{\delta f} \|_{f^{(0)}(x)} = y(x) - f^{(0)}(x)=y(x)$. Now we fit $f^{(1)}(x)$ to the gradient using our algorithm of choice. Again we can calculate the gradient at this new function, $\frac{\delta J}{\delta f} |_{f^{(0)}(x)+f^{(1)}(x)} = y(x) - (f^{(0)}(x) + f^{(1)}(x))$. We then fit another function $f^{(2)}(x)$ to this dataset. Alright, I hope you can see where this is going.
 
 
 
