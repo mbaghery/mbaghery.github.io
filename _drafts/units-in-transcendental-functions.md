@@ -26,5 +26,9 @@ Furthermore, we've never measured anything like $\sin(1m)$ before, although it i
 Is there any way we can avoid this whole mess?
 That's where the Buckingham theorem comes into play. It turns out we can rewrite any physical differential equation such that it is completely free of any units.
 
+Read this:
+https://physics.stackexchange.com/questions/7668/fundamental-question-about-dimensional-analysis
+
+
 
 {%- include disqus_comments.html -%}
